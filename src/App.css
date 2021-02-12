@@ -1,38 +1,197 @@
-.App {
+* {    
+  margin: 0;
+  padding: 0 ;
+}
+
+.App{
+  padding: 0;
+  margin: 0;
+  background: #283646;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sexy_line { 
+  height: 1px;
+  border: 0;
+  background: black;
+  margin-top: 10vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-bottom: 15vh;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#171717), to(#171717), color-stop(50%, white));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.halfImg{
+  height: 100%;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.top{
+
+  background-color: #171717 ;
+  height: 60vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.advert{
+  height: 100%;
+  width: 80%;
+  margin-left: 0vw;
+  margin-top: 9vh;
+}
+
+.lamr{
   color: white;
+  font-family: forte;
+  font-size: 1.75vw;
+  padding-right: 1vw;
 }
 
-.App-link {
-  color: #61dafb;
+.head{
+  display: flex;
+  height: 10vh;
+  background: #171717;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.playerdiv {
+  display: inline-block;
+  margin: auto;
+  width: 50vw;
+  height: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0vh;
+  padding-top: 5vh;
 }
+
+.logoImg{
+  margin-left: 1vw;
+  height: 4vw;
+  width: 5vw;
+}
+
+.half{
+  height: 100%;
+  width: 50vw;
+}
+
+.player{
+  padding-top: 1vh;
+}
+
+.middle{
+  
+  height: 100vh;
+  background: white;
+}
+
+.lamr2{
+  margin-top: 10vh;
+  color: #11ACA3;
+  font-family: forte;
+}
+
+.lamr3{
+  color: white;
+  font-family: forte;
+  font-size: 3vw;
+  padding-right: 1vw;
+}
+
+.lamr4{
+  color: black;
+  font-family: forte;
+  font-size: 2vw;
+  padding-right: 1vw;
+  padding-top: 10vh;
+}
+
+.pics{
+  display: flex;
+  height: 50vh;
+  width: 100%;
+
+  justify-content: center;
+}
+
+.picture{
+  height: 40vh;
+  width: 50vh;
+  background-size: 60vh;
+  
+  margin-right: 2.5vw;
+  margin-left: 2.5vw;
+  border-radius: 1vw;
+  margin-top: 5vw;
+}
+
+.pictext{
+  margin-right: 8vw;
+  margin-left: 8vw;
+  margin-top: 1vw;
+  font-family: "Forte";
+}
+
+.third{
+  height: 100vh;
+  background: #171717;
+}
+
+.lamrthird{
+  color: white;
+  font-family: forte;
+  font-size: 2vw;
+  padding-right: 1vw;
+  padding-top: 5vh;
+}
+
+.fourth{
+  height: 80vh;
+  background: rgb(172, 126, 12);
+  display: flex;
+  
+}
+
+.halffour{
+  height: 100%;
+  width: 50vw;
+  flex-direction: column;
+  display: flex;
+}
+
+.fourlamr{
+  color: white;
+  font-family: forte;
+  font-size: 2vw;
+  padding-right: 1vw;
+  padding-top: 15vh;
+}
+
+.box{
+  height: 6vh;
+  width: 30vw;
+  background-color: #EBB232;
+  margin-top: 2.35vw;
+  margin-left: 10vw;
+  display: flex;
+  align-items: center;
+  border-radius: .25vw;
+  
+}
+
+.lamrbox{
+  color: white;
+  font-family: forte;
+  font-size: 1.75vw;
+  padding-left: 1vw;
+}
+
+.fifth{
+  height: 150vh;
+  background: #171717;
+}
+
+
