@@ -36,11 +36,7 @@ function App() {
           <img className = "picture" src="https://cdn.discordapp.com/attachments/269532516573118464/809886775895130132/unknown.png" ></img>
         </div>
 
-        <div className="pics"> 
-          <h1 className = "pictext">lamr the daf</h1>
-          <h1 className = "pictext">aeay bktch as nomel</h1>
-          <h1 className = "pictext">daf sire nomel lamr</h1>
-        </div>
+
       </div>
 
 
@@ -79,7 +75,7 @@ function App() {
           </div>
 
           <div className = "box">
-            <h1 className = "lamrbox">@TheWestGuy - lamr bktch daf sire</h1>
+            <h1 className = "lamrbox">@Mommy - At first I was skeptical, but it works. Its lamr daf 100%.</h1>
           </div>
 
           <div className = "box">
@@ -111,8 +107,6 @@ function App() {
           <img className = "picture" src="https://cdn.discordapp.com/attachments/269532516573118464/809886893298155580/unknown.png" ></img>
           <img className = "picture" src="https://cdn.discordapp.com/attachments/269532516573118464/809886775895130132/unknown.png" ></img>
         </div>
-
-
       </div>
 
 

@@ -10,46 +10,34 @@
   text-align: center;
 }
 
-.sexy_line { 
-  height: 1px;
-  border: 0;
-  background: black;
-  margin-top: 10vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  margin-bottom: 15vh;
-  background: -webkit-gradient(linear, 0 0, 100% 0, from(#171717), to(#171717), color-stop(50%, white));
-}
-
 .halfImg{
   height: 100%;
   width: 100%;
 }
 
 .top{
-
   background-color: #171717 ;
-  height: 60vh;
+  height: 40vw;
   display: flex;
 }
 
 .advert{
   height: 100%;
-  width: 80%;
+  width: 100%;
   margin-left: 0vw;
-  margin-top: 9vh;
+  margin-top: 9vw;
 }
 
 .lamr{
   color: white;
   font-family: forte;
-  font-size: 1.75vw;
+  font-size: 2vh;
   padding-right: 1vw;
 }
 
 .head{
   display: flex;
-  height: 10vh;
+  height: 10vw;
   background: #171717;
   justify-content: space-between;
   align-items: center;
@@ -59,8 +47,8 @@
 .playerdiv {
   display: inline-block;
   margin: auto;
-  width: 50vw;
-  height: 30vw;
+  width: 80vw;
+  height: 50vw;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0vh;
@@ -69,13 +57,14 @@
 
 .logoImg{
   margin-left: 1vw;
-  height: 4vw;
-  width: 5vw;
+  height: 8vw;
+  width: 10vw;
 }
 
 .half{
   height: 100%;
   width: 50vw;
+  
 }
 
 .player{
@@ -84,7 +73,7 @@
 
 .middle{
   
-  height: 100vh;
+  height: 170vw;
   background: white;
 }
 
@@ -97,29 +86,30 @@
 .lamr3{
   color: white;
   font-family: forte;
-  font-size: 3vw;
+  font-size: 4vw;
   padding-right: 1vw;
 }
 
 .lamr4{
   color: black;
   font-family: forte;
-  font-size: 2vw;
+  font-size: 4vw;
   padding-right: 1vw;
-  padding-top: 10vh;
+  padding-top: 10vw;
 }
 
 .pics{
   display: flex;
-  height: 50vh;
+  height: 50vw;
   width: 100%;
 
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .picture{
-  height: 40vh;
-  width: 50vh;
+  height: 80%;
+  width: 55vw;
   background-size: 60vh;
   
   margin-right: 2.5vw;
@@ -136,20 +126,20 @@
 }
 
 .third{
-  height: 100vh;
+  height: 80vw;
   background: #171717;
 }
 
 .lamrthird{
   color: white;
   font-family: forte;
-  font-size: 2vw;
+  font-size: 5vw;
   padding-right: 1vw;
-  padding-top: 5vh;
+  padding-top: 5vw;
 }
 
 .fourth{
-  height: 80vh;
+  height: 70vw;
   background: rgb(172, 126, 12);
   display: flex;
   
@@ -165,17 +155,17 @@
 .fourlamr{
   color: white;
   font-family: forte;
-  font-size: 2vw;
+  font-size: 5vw;
   padding-right: 1vw;
   padding-top: 15vh;
 }
 
 .box{
-  height: 6vh;
-  width: 30vw;
+  height: 6vw;
+  width: 45vw;
   background-color: #EBB232;
-  margin-top: 2.35vw;
-  margin-left: 10vw;
+  margin-top: 3vw;
+  margin-left: 5vw;
   display: flex;
   align-items: center;
   border-radius: .25vw;
@@ -185,12 +175,12 @@
 .lamrbox{
   color: white;
   font-family: forte;
-  font-size: 1.75vw;
+  font-size: 2.5vw;
   padding-left: 1vw;
 }
 
 .fifth{
-  height: 150vh;
+  height: 230vw;
   background: #171717;
 }
 
