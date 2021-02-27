@@ -4,39 +4,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Home from "./Home.js";
 
-// const DiscordOauth2 = require("discord-oauth2");
-// const oauth = new DiscordOauth2();
-
-const DiscordOauth2 = require("discord-oauth2");
-const oauth = new DiscordOauth2({
-    clientId: "815073502784389142",
-    clientSecret: "RyIGZfyxB-OR0vQ7cgJy-jP6jn0F78Pa",
-    redirectUri: "https://www.lamrdaf.com/",
-});
- 
-const url = oauth.generateAuthUrl({
-    scope: ["identify", "email", "guilds"],
-    state: 0, // Be aware that randomBytes is sync if no callback is provided
-});
-
-console.log(url);
-
-
-
-
-// const DiscordOauth2 = require("discord-oauth2");
-// const oauth = new DiscordOauth2();
-
-// oauth.tokenRequest({
-// 	clientId: "815073502784389142",
-// 	clientSecret: "RyIGZfyxB-OR0vQ7cgJy-jP6jn0F78Pa",
-
-// 	code: "query code",
-// 	scope: "identify guilds",
-// 	grantType: "authorization_code",
-	
-// 	redirectUri: "https://www.lamrdaf.com/",
-// }).then(console.log)
 
 
 window.onload = () => {
