@@ -11,7 +11,7 @@ const DiscordOauth2 = require("discord-oauth2");
 const oauth = new DiscordOauth2({
     clientId: "815073502784389142",
     clientSecret: "RyIGZfyxB-OR0vQ7cgJy-jP6jn0F78Pa",
-    redirectUri: "https://www.lamrdaf.com/discord",
+    redirectUri: "https://www.lamrdaf.com",
 });
  
 const url = oauth.generateAuthUrl({
