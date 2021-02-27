@@ -81,7 +81,7 @@ function App() {
               <Link to="/users">Users</Link>
             </li>
             <li>
-              <Link to="/discord">Users</Link>
+              <Link to="/discord">discord</Link>
             </li>
           </ul>
         </nav>
