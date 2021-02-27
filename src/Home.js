@@ -5,10 +5,7 @@ function Home() {
   return (
     <div className="App">
 
-      <div className="head">
-        <img className = "logoImg" src="https://media.discordapp.net/attachments/756344862944657428/756346155675287623/lamrwhite.png" ></img>
-        <h1 className="lamr" id="lamrhead"> the one and only Lamr Daf </h1>
-      </div>
+      
 
       
 
