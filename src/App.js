@@ -11,7 +11,7 @@ const DiscordOauth2 = require("discord-oauth2");
 const oauth = new DiscordOauth2({
     clientId: "815073502784389142",
     clientSecret: "RyIGZfyxB-OR0vQ7cgJy-jP6jn0F78Pa",
-    redirectUri: "https://www.lamrdaf.com/auth",
+    redirectUri: "https://www.lamrdaf.com/discord",
 });
  
 const url = oauth.generateAuthUrl({
@@ -80,6 +80,9 @@ function App() {
             <li>
               <Link to="/users">Users</Link>
             </li>
+            <li>
+              <Link to="/discord">Users</Link>
+            </li>
           </ul>
         </nav>
 
@@ -93,7 +96,7 @@ function App() {
 
             <h1>user</h1>
           </Route>
-          <Route path="/auth">
+          <Route path="/discord">
             <h1>Authenticating...</h1>
           </Route>
           <Route path="/">
