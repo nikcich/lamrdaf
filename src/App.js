@@ -39,7 +39,7 @@ console.log(url);
 // }).then(console.log)
 
 
-
+window.onload = () => {
 const fragment = new URLSearchParams(window.location.hash.slice(1));
 
 			if (fragment.has("access_token")) {
@@ -62,7 +62,7 @@ const fragment = new URLSearchParams(window.location.hash.slice(1));
 			else {
 				console.log("else");
 			}
-
+  }
 
 
 function App() {
