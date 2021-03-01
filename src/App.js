@@ -1,14 +1,108 @@
 import './App.css';
 import ReactPlayer from "react-player";
-import React from "react";
+import React, {useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Home from "./Home.js";
 import Login from "./Login.js";
-
-
-
+import fire from './fire';
+import {storage} from'./fire';
+import { Redirect } from 'react-router-dom';
+import Europe from './Europe.js';
+import Logout from './Logout.js';
 
 function App() {
+
+  const [user, setUser] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [hasAccount, setHasAccount] = useState(false);
+
+  const clearInputs = () => {
+    setEmail('');
+    setPassword('');
+  }
+
+  const clearErrors = () => {
+    setEmailError('');
+    setPasswordError('');
+  }
+
+  const handleLogin = () => {
+    clearErrors();
+    fire.auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        window.location.replace("https://www.lamrdaf.com/");
+      })
+      .catch(err => {
+        switch(err.code){
+          case "auth/invalid-email":
+          case "auth/user-disabled":
+          case "auth/user-not-found":
+            setEmailError(err.message);
+            break;
+          case "auth/wrong-password":
+            setPasswordError(err.message);
+            break;
+        }
+      });
+  }
+
+  const handleSignUp = () => {
+    clearErrors();
+    fire
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        window.location.replace("https://www.lamrdaf.com/");
+      })
+      .catch(err => {
+        switch(err.code){
+          case "auth/email-already-in-use":
+          case "auth/invalid-email":
+            setEmailError(err.message);
+            break;
+          case "auth/weak-password":
+            setPasswordError(err.message);
+            break;
+        }
+      });
+  }
+
+  const handleLogout = () => {
+    fire.auth().signOut();
+    setUser('');
+    setEmail('');
+    setPassword('');
+    //setPages('');
+  }
+
+  const authListener = () => {
+    fire.auth().onAuthStateChanged(user =>{
+      if(user){
+        clearInputs();
+        setUser(user);
+        console.log('OMG WE LOGGED IN?');
+        ///////////////////////////////////// lol this works
+       // let obj = {id:user.uid, email:user.email};
+        //if(!list.includes(obj)){
+          //ref.doc(user.uid).set({id:user.uid, email:user.email});
+        //}
+        ///////////////////////////////////// lol this works
+
+      }else{
+        setUser('');
+        console.log('OMG failure');
+      }
+    });
+  }
+
+  useEffect(() => {
+    authListener();
+  }, [])
+
   return (
     <Router>
       <div>
@@ -22,28 +116,57 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/login">login</Link>
+                <Link to="/junkes.dk">Europe</Link>
               </li>
-              <li>
-                <Link to="/users">Users</Link>
-              </li>
+              {user !== '' ? (
+                <>
+                  <li>
+                    <Link to="/logout">Logout</Link>
+                  </li>
+                </>
+              ):(
+              <>
+                <li>
+                  <Link to="/login">login</Link>
+                </li>
+                
+              </>
+              )}
+              
             </ul>
           </nav>
         </div>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/login">
-            <Login></Login>
+            <Login 
+              email={email} 
+              setEmail={setEmail} 
+              password={password} 
+              setpassword={setPassword} 
+              handleLogin={handleLogin}
+              hasAccount={hasAccount}
+              setHasAccount={setHasAccount}
+              emailError={emailError}
+              passwordError={passwordError}
+              handleSignUp={handleSignUp}
+            />
           </Route>
-          <Route path="/users">
 
-            <h1>user</h1>
+          <Route path="/logout">
+            <Logout 
+              handleLogout={handleLogout}
+            />
           </Route>
+
+          <Route path="/junkes.dk">
+            <Europe />
+          </Route>
+
           <Route path="/">
             <Home></Home>
           </Route>
+
         </Switch>
       </div>
     </Router>
