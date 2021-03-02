@@ -58,7 +58,7 @@ function App() {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         checkIfExists();
-        //window.location.replace("https://www.lamrdaf.com/");
+        window.location.replace("https://www.lamrdaf.com/");
       })
       .catch(err => {
         switch(err.code){
