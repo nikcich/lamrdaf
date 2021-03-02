@@ -9,6 +9,25 @@ import {storage} from'./fire';
 import { Redirect } from 'react-router-dom';
 import Europe from './Europe.js';
 import Logout from './Logout.js';
+import AccountPage from './AccountPage';
+
+const ref = fire.firestore().collection("userData");
+
+let thelist = null;
+   ref.onSnapshot( async (querySnapshot) => {
+      const items= [];
+      const tref = fire.firestore().collection("userData").doc('information');
+      const doc = await tref.get();
+      if(doc.exists){
+        console.log(doc.data());
+        thelist = doc.data();
+        //setList(doc.data());
+      }else{
+        console.log('doesnt exist');
+      }
+  });
+
+  
 
 function App() {
 
@@ -18,6 +37,10 @@ function App() {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
+  const [list, setList] = useState('');
+
+
+  
 
   const clearInputs = () => {
     setEmail('');
@@ -34,7 +57,8 @@ function App() {
     fire.auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        window.location.replace("https://www.lamrdaf.com/");
+        checkIfExists();
+        //window.location.replace("https://www.lamrdaf.com/");
       })
       .catch(err => {
         switch(err.code){
@@ -50,12 +74,25 @@ function App() {
       });
   }
 
+  function checkIfExists(){
+    const original = JSON.stringify(thelist);
+    if( !original.includes(user.uuid) ){
+      const doc = fire.firestore().collection("userData").doc('information');
+      // doc.set({
+
+      // });
+      console.log(original)
+      //console.log("doesnt have user in list yet?");
+    }
+  }
+
   const handleSignUp = () => {
     clearErrors();
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
+        checkIfExists();
         window.location.replace("https://www.lamrdaf.com/");
       })
       .catch(err => {
@@ -106,8 +143,7 @@ function App() {
   return (
     <Router>
       <div>
-        
-
+  
         <div className="head">
           <img className = "logoImg" src="https://media.discordapp.net/attachments/756344862944657428/756346155675287623/lamrwhite.png" ></img>
           <nav>
@@ -121,7 +157,7 @@ function App() {
               {user !== '' ? (
                 <>
                   <li>
-                    <Link to="/logout">Logout</Link>
+                    <Link to="/account">Account</Link>
                   </li>
                 </>
               ):(
@@ -129,7 +165,6 @@ function App() {
                 <li>
                   <Link to="/login">login</Link>
                 </li>
-                
               </>
               )}
               
@@ -161,6 +196,13 @@ function App() {
 
           <Route path="/junkes.dk">
             <Europe />
+          </Route>
+
+          <Route path="/account">
+                <AccountPage 
+                  user={user}
+                  thelist={thelist}
+                />
           </Route>
 
           <Route path="/">
