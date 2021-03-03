@@ -64,11 +64,11 @@ function Home() {
           </div>
 
           <div className = "box">
-            <h1 className = "lamrbox">@ruby - lamr daf</h1>
+            <h1 className = "lamrbox">@Kay (105% dick) - lamr daf</h1>
           </div>
           
           <div className = "box">
-            <h1 className = "lamrbox">@Spite - lamr daf boys</h1>
+            <h1 className = "lamrbox">@ruby - lamr daf boys</h1>
           </div>
 
           <div className = "box">
